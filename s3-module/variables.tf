@@ -1,6 +1,6 @@
 variable "env" {
   type    = string
-  default = "dev"
+  #default = "dev"
 }
 
 variable "versioning" {
@@ -15,5 +15,5 @@ variable "create_vpc" {
 
 variable "region" {
     type = string
-    default = "us-east-1"
+    #default = "us-east-1"
 }
