@@ -24,5 +24,5 @@ variable "vpc_id" {
 }
 
 variable "my_key" {
-  type    = string
+  type = string
 }
