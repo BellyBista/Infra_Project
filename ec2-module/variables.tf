@@ -12,3 +12,13 @@ variable "region" {
   type = string
   #default = "us-east-1"
 }
+
+variable "instance_count" {
+  description = "The number of EC2 instances to create"
+  type        = number
+}
+
+variable "vpc_id" {
+  description = "The ID of the VPC in which to create the EC2 instances"
+  type        = string
+}
