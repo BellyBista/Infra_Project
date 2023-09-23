@@ -1,5 +1,6 @@
 # Infra_Project
-Private repo for terraform modules created
+Private repo for terraform modules created 
+This repo is connect to the terraform_workflows repo via ssh
 
 ### s3-module
 The s3-module requires env and region variables to be pass during runtime
