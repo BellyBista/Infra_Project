@@ -1,5 +1,3 @@
-/*
-
 terraform {
   required_version = "~> 1.0"
   required_providers {
@@ -13,5 +11,3 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
-
-*/
