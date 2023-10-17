@@ -1,3 +1,9 @@
+module "eks-user" {
+  source    = "git::https://github.com/BellyBista/eks-user.git"
+  developer = var.developer
+  admin     = var.admin
+}
+
 resource "aws_eks_cluster" "demo" {
   name     = "demo"
   role_arn = data.terraform_remote_state.network.outputs.cluster_role
