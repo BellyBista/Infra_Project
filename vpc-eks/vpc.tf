@@ -3,6 +3,12 @@ module "iam_role" {
   source = "git::https://github.com/BellyBista/IAM-module.git"
 }
 
+module "eks-user" {
+  source    = "git::https://github.com/BellyBista/eks-user.git"
+  developer = var.developer
+  admin     = var.admin
+}
+
 #1. Create VPC
 resource "aws_vpc" "main" {
   cidr_block           = var.vpc_cidr

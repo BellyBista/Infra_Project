@@ -28,3 +28,11 @@ variable "public_cidr" {
   default     = ["10.0.101.0/24", "10.0.102.0/24"]
 
 }
+
+variable "developer" {
+  type = list(string)
+}
+
+variable "admin" {
+  type = list(string)
+}
