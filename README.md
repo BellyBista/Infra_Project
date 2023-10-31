@@ -1,9 +1,15 @@
 # Infra_Project
 Private repo for terraform modules created 
-This repo is connect to the terraform_workflows repo via ssh
+This repo is connected to the terraform_workflows repo via ssh
+This repo contain a fully configured:
+- eks cluster
+- ec2-module and s3-module that passed the checkov test
+- vpc module
+- packer for ami
+- vault for credential mangement 
 
-### s3-module
-The s3-module requires env and region variables to be pass during runtime
 
-### ec2-module
-The ec2-module requires region, instance_count,  my_instance_type, name (for tag), vpc_id, and my_key to be pass during runtime
+### Sequence of runs of eks from provisioning to monitoring
+This repo contain a fully configured eks cluster 
+
+vpc-eks ---> eks ---> ---> security_group ---> test-oidc ---> autoscaling ---> argocd ---> efs ---> istio
