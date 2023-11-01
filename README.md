@@ -7,7 +7,7 @@ This repo contain a fully configured:
 - ec2-module and s3-module that passed the checkov test
 - vpc module
 - packer for ami
-- vault for credential mangement 
+- vault admin for credential mangement 
 
 
 ### Sequence of runs of eks from provisioning to monitoring
