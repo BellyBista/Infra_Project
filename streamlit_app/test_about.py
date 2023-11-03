@@ -3,7 +3,7 @@ from pathlib import Path
 import json
 import dill
 import streamlit as st
-from About import (init_saved_data, main, make_prediction)
+from About import (init_saved_data, main)
 
 def test_init_saved_data():
     saved_data = init_saved_data()
