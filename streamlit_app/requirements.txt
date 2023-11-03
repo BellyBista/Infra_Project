@@ -10,3 +10,4 @@ psutil==5.9.5
 dill==0.3.4
 feature-engine==1.6.1
 streamlit_option_menu==0.3.2
+pytest
