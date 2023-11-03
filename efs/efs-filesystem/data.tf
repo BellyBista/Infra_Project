@@ -1,7 +1,14 @@
-data "terraform_remote_state" "network" {
+data "terraform_remote_state" "sg" {
   backend = "local"
   config = {
     path = "../../security_group/terraform.tfstate"
+  }
+}
+
+data "terraform_remote_state" "network" {
+  backend = "local"
+  config = {
+    path = "../../vpc-eks/terraform.tfstate"
   }
 }
 
