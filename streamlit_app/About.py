@@ -52,7 +52,7 @@ def main():
             st.write("")
         with col2:
             # Load and display an image from a local file
-            image = Image.open('images/logo.png')
+            image = Image.open('./streamlit_app/images/logo.png')
             st.image(image, width=250)
         with col3:
             st.write("")
