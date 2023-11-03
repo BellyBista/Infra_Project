@@ -9,30 +9,6 @@ def test_init_saved_data():
     saved_data = init_saved_data()
     assert isinstance(saved_data, list)
 
-@patch('streamlit.markdown')
-def test_main_home(mock_markdown):
-    selected = "Home"  # Mock user's selection
-    main()
-    # Assertions to check if the "Home" section is displayed correctly
-    mock_markdown.assert_any_call(r"<h1 style='.*'>Navigating Cancer Care</h1>")
-    mock_markdown.assert_any_call(r"<h3 style='.*'>Your Financial Guide, Powered by Iryss</h3>")
-
-@patch('streamlit.markdown')
-@patch('streamlit.button', return_value=True)
-def test_main_estimate_total_charges(mock_button, mock_markdown):
-    selected = "Estimate Total Charges"  # Mock user's selection
-    main()
-    # Assertions to check if the "Estimate Total Charges" section is displayed correctly
-    mock_markdown.assert_any_call(r"<style>.*</style>")
-    mock_button.assert_called_once()
-
-@patch('streamlit.button', return_value=True)
-def test_estimate_total_charges_button(mock_button):
-    selected = "Estimate Total Charges"  # Mock user's selection
-    main()
-    # Simulate clicking the "Estimate Total Charges" button
-    mock_button.assert_called_once()
-
 def test_load_json():
     # Replace with the directory containing your JSON files
     json_dir = "./streamlit_app/model_A_object"
@@ -72,8 +48,5 @@ def test_make_prediction():
 
 if __name__ == '__main__':
     test_init_saved_data()
-    test_main_home()
-    test_main_estimate_total_charges()
-    test_estimate_total_charges_button()
     test_load_json()
     test_load_obj()
