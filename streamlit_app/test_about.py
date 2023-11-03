@@ -1,8 +1,9 @@
 from unittest.mock import patch
 from pathlib import Path
+import json
 import dill
 import streamlit as st
-from About import (init_saved_data, main, load_json, load_obj, make_prediction)
+from About import (init_saved_data, main, make_prediction)
 
 def test_init_saved_data():
     saved_data = init_saved_data()
@@ -49,7 +50,7 @@ def test_load_json():
         assert file_path.is_file(), f"File not found: {file_path}"
 
         with open(file_path, 'r') as json_file:
-            data = load_json(json_file)
+            data = json.load(json_file)
             assert isinstance(data, dict), f"Expected a dictionary in {file_name}"
             assert len(data) > 0, f"Dictionary is empty in {file_name}"
 
