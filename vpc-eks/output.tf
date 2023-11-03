@@ -7,7 +7,6 @@ output "public" {
 
 }
 
-
 output "node_role" {
   value = module.iam_role.node_role
 }
@@ -23,3 +22,12 @@ output "developer_password" {
 output "admin_password" {
   value = module.eks-user.admin_password
 }
+
+output "vpc_id" {
+  value = aws_vpc.main.id
+}
+
+output "vpc_cidr_block" {
+  value = var.vpc_cidr
+}
+
