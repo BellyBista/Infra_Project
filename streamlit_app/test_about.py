@@ -9,23 +9,19 @@ def test_init_saved_data():
     saved_data = init_saved_data()
     assert isinstance(saved_data, list)
 
-@patch('streamlit.spinner', return_value=True)
 @patch('streamlit.markdown')
-def test_main_home(mock_markdown, mock_spinner):
+def test_main_home(mock_markdown):
     selected = "Home"  # Mock user's selection
-    with st.spinner("Loading..."):  # Mock loading message
-        main()
+    main()
     # Assertions to check if the "Home" section is displayed correctly
     mock_markdown.assert_any_call(r"<h1 style='.*'>Navigating Cancer Care</h1>")
     mock_markdown.assert_any_call(r"<h3 style='.*'>Your Financial Guide, Powered by Iryss</h3>")
 
-@patch('streamlit.spinner', return_value=True)
 @patch('streamlit.markdown')
 @patch('streamlit.button', return_value=True)
-def test_main_estimate_total_charges(mock_button, mock_markdown, mock_spinner):
+def test_main_estimate_total_charges(mock_button, mock_markdown):
     selected = "Estimate Total Charges"  # Mock user's selection
-    with st.spinner("Loading..."):  # Mock loading message
-        main()
+    main()
     # Assertions to check if the "Estimate Total Charges" section is displayed correctly
     mock_markdown.assert_any_call(r"<style>.*</style>")
     mock_button.assert_called_once()
@@ -33,8 +29,7 @@ def test_main_estimate_total_charges(mock_button, mock_markdown, mock_spinner):
 @patch('streamlit.button', return_value=True)
 def test_estimate_total_charges_button(mock_button):
     selected = "Estimate Total Charges"  # Mock user's selection
-    with st.spinner("Loading..."):  # Mock loading message
-        main()
+    main()
     # Simulate clicking the "Estimate Total Charges" button
     mock_button.assert_called_once()
 
