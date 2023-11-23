@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Set Terraform working directory
 TERRAFORM_DIR="./"
 
