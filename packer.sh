@@ -4,12 +4,12 @@ set -x
 
 # Define variables
 region="us-east-1"
-team="g09"
-env="dev"
+team="jenkins"
+env="east"
 ami_name="bootcamp32-${team}-${env}"
-terraform_directory="/Users/quadribello/Infra_Project"
-packer_folder="/Users/quadribello/Infra_Project/ami_packer"
-packer_template="/Users/quadribello/Infra_Project/ami_packer/aws_docker.pkr.hcl"
+terraform_directory="./ec2-module"
+packer_folder="./ami_packer"
+packer_template="./ami_packer/aws_docker.pkr.hcl"
 
 # Check if the AMI exists in the specified region
 if aws ec2 describe-images --region $region --filters "Name=name,Values=$ami_name" | grep -q "ImageId"; then
